@@ -82,3 +82,8 @@ CREATE TABLE regions (
 ALTER TABLE districts ADD COLUMN region_id INT REFERENCES regions(region_id);
 ALTER TABLE agricultural_impact ADD COLUMN region_id INT REFERENCES regions(region_id);
 ALTER TABLE aid_distribution ADD COLUMN region_id INT REFERENCES regions(region_id);
+
+--remove the region column from districts, agricultural_impact, and aid_distribution tables
+ALTER TABLE districts DROP COLUMN region;
+ALTER TABLE agricultural_impact DROP COLUMN region;
+ALTER TABLE aid_distribution DROP COLUMN region;
