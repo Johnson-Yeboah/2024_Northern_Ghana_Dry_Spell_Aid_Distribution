@@ -87,3 +87,14 @@ ALTER TABLE aid_distribution ADD COLUMN region_id INT REFERENCES regions(region_
 ALTER TABLE districts DROP COLUMN region;
 ALTER TABLE agricultural_impact DROP COLUMN region;
 ALTER TABLE aid_distribution DROP COLUMN region;
+
+-- Insert unique regions into the regions table
+INSERT INTO regions (region_name) VALUES
+('Northern'),
+('Upper East'),
+('Upper West'),
+('Savannah'),
+('North East');
+
+-- Verify the regions table
+SELECT * FROM regions;
